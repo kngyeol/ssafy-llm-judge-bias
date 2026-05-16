@@ -1,0 +1,19 @@
+{
+  "timestamp": "20260516_151907",
+  "tag": "swap",
+  "source_battle": "battle_20260516_134437_judge-gpt5",
+  "restyle": {
+    "a_restyler": {
+      "name": "Claude-Opus-4.5",
+      "model": "claude-opus-4-5-20251101",
+      "kind": "anthropic"
+    },
+    "b_restyler": {
+      "name": "GPT-5.2",
+      "model": "gpt-5.2",
+      "kind": "openai"
+    },
+    "intent": "원본 A(GPT 내용)을 Claude 스타일로, 원본 B(Claude 내용)을 GPT 스타일로"
+  },
+  "note": "내용은 GPT/Claude 그대로, 스타일만 뒤바뀐 상태. replay_judge.py로 심판 채점 진행."
+}

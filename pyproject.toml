@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "judge-bias-check"
+version = "0.1.0"
+description = "LLM-as-a-judge in-family bias 측정 도구 — GPT/Claude/Gemini 등 N개 심판으로 같은 답변 비교"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "kngyeol" }]
+requires-python = ">=3.10"
+dependencies = ["httpx>=0.27"]
+keywords = ["llm", "evaluation", "benchmark", "bias", "judge", "openai", "anthropic", "gemini"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/kngyeol/ssafy-llm-judge-bias"
+Repository = "https://github.com/kngyeol/ssafy-llm-judge-bias"
+Issues = "https://github.com/kngyeol/ssafy-llm-judge-bias/issues"
+
+[project.scripts]
+judge-bias-fight    = "gladiator:main"
+judge-bias-replay   = "replay_judge:main"
+judge-bias-restyle  = "restyle:main"
+judge-bias-human    = "human_baseline:main"
+
+[tool.setuptools]
+py-modules = ["gladiator", "replay_judge", "restyle", "human_baseline"]

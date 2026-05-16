@@ -1,0 +1,351 @@
+{
+  "timestamp": "20260516_151905",
+  "tag": "self-claude",
+  "from_battle": "battle_20260516_134437_judge-gpt5",
+  "judge": {
+    "name": "CLAUDE_OPUS_4_5_20251101",
+    "model": "claude-opus-4-5-20251101",
+    "kind": "anthropic"
+  },
+  "swap_ab": false,
+  "totals": {
+    "A": 15,
+    "B": 11,
+    "TIE": 24,
+    "ERROR": 0
+  },
+  "by_category": {
+    "code": {
+      "A": 3,
+      "B": 1,
+      "TIE": 6,
+      "ERROR": 0
+    },
+    "creative": {
+      "A": 3,
+      "B": 2,
+      "TIE": 5,
+      "ERROR": 0
+    },
+    "korean": {
+      "A": 4,
+      "B": 3,
+      "TIE": 3,
+      "ERROR": 0
+    },
+    "reasoning": {
+      "A": 0,
+      "B": 2,
+      "TIE": 8,
+      "ERROR": 0
+    },
+    "writing": {
+      "A": 5,
+      "B": 3,
+      "TIE": 2,
+      "ERROR": 0
+    }
+  },
+  "results": [
+    {
+      "id": "code-1",
+      "category": "code",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "code-10",
+      "category": "code",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "code-2",
+      "category": "code",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "code-3",
+      "category": "code",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "code-4",
+      "category": "code",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "code-5",
+      "category": "code",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "code-6",
+      "category": "code",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "code-7",
+      "category": "code",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "code-8",
+      "category": "code",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "code-9",
+      "category": "code",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "creative-1",
+      "category": "creative",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "creative-10",
+      "category": "creative",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "creative-2",
+      "category": "creative",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "creative-3",
+      "category": "creative",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "creative-4",
+      "category": "creative",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "creative-5",
+      "category": "creative",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "creative-6",
+      "category": "creative",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "creative-7",
+      "category": "creative",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "creative-8",
+      "category": "creative",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "creative-9",
+      "category": "creative",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "korean-1",
+      "category": "korean",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "korean-10",
+      "category": "korean",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "korean-2",
+      "category": "korean",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "korean-3",
+      "category": "korean",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "korean-4",
+      "category": "korean",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "korean-5",
+      "category": "korean",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "korean-6",
+      "category": "korean",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "korean-7",
+      "category": "korean",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "korean-8",
+      "category": "korean",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "korean-9",
+      "category": "korean",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "reasoning-1",
+      "category": "reasoning",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "reasoning-10",
+      "category": "reasoning",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "reasoning-2",
+      "category": "reasoning",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "reasoning-3",
+      "category": "reasoning",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "reasoning-4",
+      "category": "reasoning",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "reasoning-5",
+      "category": "reasoning",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "reasoning-6",
+      "category": "reasoning",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "reasoning-7",
+      "category": "reasoning",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "reasoning-8",
+      "category": "reasoning",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "reasoning-9",
+      "category": "reasoning",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "writing-1",
+      "category": "writing",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "writing-10",
+      "category": "writing",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "writing-2",
+      "category": "writing",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "writing-3",
+      "category": "writing",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    },
+    {
+      "id": "writing-4",
+      "category": "writing",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "writing-5",
+      "category": "writing",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "writing-6",
+      "category": "writing",
+      "judge_pick_shown": "B",
+      "original_winner": "B"
+    },
+    {
+      "id": "writing-7",
+      "category": "writing",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "writing-8",
+      "category": "writing",
+      "judge_pick_shown": "A",
+      "original_winner": "A"
+    },
+    {
+      "id": "writing-9",
+      "category": "writing",
+      "judge_pick_shown": "TIE",
+      "original_winner": "TIE"
+    }
+  ]
+}
