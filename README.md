@@ -1,174 +1,168 @@
-# LLM 심판 편향 실험 — GPT vs Claude × 3명의 심판 + 1명의 인간
+# LLM Judge Bias Benchmark
 
-> 같은 50개 챌린지에 두 LLM이 답하고, 3개 LLM 심판 + 1명의 인간이 채점.
-> **인간이 보기엔 Claude가 19승 vs GPT 12승**. LLM 심판들은 GPT를 +20~33%p 과대평가.
-> **LLM-as-a-judge는 production에 못 쓸 수준 (인간과 30~38% 일치)**.
+LLM-as-a-judge 평가 방식에서 발생하는 세 가지 편향을 측정하는 벤치마크:
+- **In-family bias** — 심판 모델이 같은 family 답변을 더 선호하는 경향
+- **Position bias** — A/B 라벨 위치에 따라 판정이 흔들리는 정도
+- **Self-preference** — 모델이 자기 자신의 답변을 채점할 때 발생하는 편향
 
-LLM-as-a-judge 평가 방식의 in-family bias 검증을 위한 3단계 실험:
-- **v1** 기본 격투 — [ANALYSIS.md](results/ANALYSIS.md)
-- **v2** 통제 실험 (position swap + self-judge + stylometric) — [ANALYSIS_v2.md](results/ANALYSIS_v2.md)
-- **v3** 인간 baseline — [ANALYSIS_v3_human.md](results/ANALYSIS_v3_human.md)
+같은 50개 챌린지에 두 모델(GPT-5.2 vs Claude-Opus-4.5)의 답변을 받아, 3개 LLM 심판(GPT-5 / Claude-Sonnet-4.5 / Gemini-2.5-Flash)과 1명의 인간이 채점한 결과를 비교한다.
 
-## TL;DR
+## Key Findings
 
-### A 선호율 (TIE 제외, GPT-5.2가 얼마나 이겼나)
+### A 선호율 (TIE 제외, GPT-5.2 답변을 선택한 비율)
 
 | 평가자 | A 선호율 | 인간 대비 편향 |
 |---|---|---|
-| **🧑 인간 (ground truth)** | **39%** | **(기준)** |
-| Claude-Sonnet 심판 | 42% | **+3%p ← 가장 정확** |
-| Gemini-Flash 심판 | 58% | +19%p |
-| GPT-5 심판 | 72% | **+33%p ← 거대한 family bias** |
+| Human (ground truth) | 39% | — |
+| Claude-Sonnet | 42% | +3pp |
+| Gemini-Flash | 58% | +19pp |
+| GPT-5 | 72% | +33pp |
 
 ### 라운드별 일치율
 
-| 비교 | 일치 |
+- LLM 심판 ↔ LLM 심판: 44–62%
+- **LLM 심판 ↔ 인간: 30–38%** (3-class random baseline 33%)
+
+### 만장일치 오류의 비대칭
+
+LLM 심판 3개가 *모두* 같은 답을 골랐지만 인간이 다른 답을 고른 라운드는 9건. 그중 8건이 GPT 과대평가 방향, 1건이 Claude 과대평가. 무작위 오류로 보기 어려운 체계적 편향.
+
+### Position swap 강도 (v2 통제 실험)
+
+| 심판 | swap 후 라운드 일치 | 해석 |
+|---|---|---|
+| GPT-5 | 41/50 (82%) | 위치 무관, 진짜 family bias |
+| Claude-Sonnet | 36/50 (72%) | 위치에 약간 흔들림 |
+| Gemini-Flash | 29/50 (58%) | 약 절반이 position bias |
+
+### Self-preference 비대칭 (v2)
+
+같은 모델이 자기 답을 채점할 때:
+- GPT-5.2 → 자기 답 64% 선호
+- Claude-Opus → 자기 답 22% 선호 (TIE 48%)
+
+## Documents
+
+| 파일 | 내용 |
 |---|---|
-| LLM 심판 ↔ LLM 심판 | 44–62% |
-| **LLM 심판 ↔ 인간** | **30–38%** (무작위 baseline 33%!) |
+| [`results/ANALYSIS.md`](results/ANALYSIS.md) | v1 — 3개 심판 기본 비교 (4,200자) |
+| [`results/ANALYSIS_v2.md`](results/ANALYSIS_v2.md) | v2 — Position swap / self-judge / stylometric 통제 실험 (5,500자) |
+| [`results/ANALYSIS_v3_human.md`](results/ANALYSIS_v3_human.md) | v3 — 인간 ground truth 추가 (4,000자) |
 
-### 핵심 발견 4가지
+## Experimental Setup
 
-1. **인간 ground truth는 Claude 손**: 인간 채점에선 Claude-Opus 19승 vs GPT-5.2 12승. v1·v2의 "GPT 우위"는 LLM 심판들의 환상.
-2. **LLM 심판 만장일치 오류 8:1로 GPT 편향**: 3개 심판이 모두 같은 답을 골랐는데 인간이 다른 답을 고른 9건 중 8건이 GPT 과대평가.
-3. **Position bias는 모델마다 다르다**: GPT-5는 거의 0, Claude는 6%, Gemini는 무려 50%가 위치에 의해 흔들림 (v2 swap).
-4. **Self-preference도 비대칭**: GPT-5.2는 자기 답 64% 선호 vs Claude-Opus는 22% (회피적). v2 self-judge.
+- **Fighter A**: `gpt-5.2`
+- **Fighter B**: `claude-opus-4-5-20251101`
+- **LLM Judges**: `gpt-5`, `claude-sonnet-4-5-20250929`, `gemini-2.5-flash`
+- **Challenges**: 50개 — `code` / `writing` / `reasoning` / `creative` / `korean` 각 10개
+- **Human Judge**: 1명, 50개 라운드 라벨 가린 채 직접 채점
 
-## 실험 설계
+## Tools
 
-- **선수 A**: GPT-5.2 (`gpt-5.2`)
-- **선수 B**: Claude-Opus-4.5 (`claude-opus-4-5-20251101`)
-- **챌린지 50개**: code / writing / reasoning / creative / korean 각 10개
-- **심판 3명**: GPT-5, Claude-Sonnet-4.5, Gemini-2.5-Flash
-- **총 비용**: 약 14,000 SSAFY GMS 크레딧
+| Script | Purpose | Cost |
+|---|---|---|
+| `gladiator.py` | Fighter 응답 생성 + judge 실행 | fighter + judge |
+| `replay_judge.py` | 기존 답변 재사용, 새 judge / A·B swap 적용 | judge only |
+| `restyle.py` | 답변을 상대 모델 스타일로 재작성 | 2× fighter rewrite |
+| `human_baseline.py` | 인터랙티브 인간 채점 + LLM judge 일치율 계산 | 0 |
 
-## 디렉토리 구조
+## Reproduction
+
+### Dependencies
+
+- Python 3.10+
+- `httpx`
+- OpenAI / Anthropic / Gemini API 호환 endpoint와 키
+
+### Setup
+
+```bash
+git clone https://github.com/kngyeol/ssafy-llm-judge-bias
+cd ssafy-llm-judge-bias
+export OPENAI_API_KEY=<your_key>
+pip install -e .     # 선택: judge-bias-{fight,replay,restyle,human} CLI 등록
+```
+
+### Run
+
+```bash
+# 챌린지 합쳐서 v1 실행 (judge 3종 따로 따로)
+python3 gladiator.py --challenges challenges.json challenges-extended.json \
+    --judge gpt-5 --tag judge-gpt5
+
+# v2-A: Position swap
+python3 replay_judge.py --from-battle results/battle_..._judge-gpt5 \
+    --judge gpt-5 --swap-ab --tag swap-gpt5
+
+# v2-B: Self-judge
+python3 replay_judge.py --from-battle results/battle_..._judge-gpt5 \
+    --judge gpt-5.2 --tag self-gpt
+
+# v2-C: Stylometric (rewrite → re-judge)
+python3 restyle.py --from-battle results/battle_..._judge-gpt5 --tag swap
+python3 replay_judge.py --from-battle results/restyle_..._swap \
+    --judge gpt-5 --tag stylometric-gpt5
+
+# v3: Human baseline
+python3 human_baseline.py            # interactive scoring
+python3 human_baseline.py --compare  # LLM judge들과 일치율 계산
+```
+
+### Custom endpoints
+
+기본 설정은 OpenAI / Anthropic / Gemini API 호환 프록시를 호출. 직접 endpoint를 쓰려면 `gladiator.py` 상단의 `GMS_*` 상수를 수정:
+
+```python
+GMS_OPENAI    = "https://api.openai.com/v1"
+GMS_ANTHROPIC = "https://api.anthropic.com/v1"
+GMS_GEMINI    = "https://generativelanguage.googleapis.com/v1beta"
+```
+
+## Directory Structure
 
 ```
 .
-├── gladiator.py                              # 메인 실행 스크립트
-├── challenges.json                           # 챌린지 10개 (시드)
-├── challenges-extended.json                  # 챌린지 40개 (확장)
+├── gladiator.py                              # 기본 battle runner
+├── replay_judge.py                           # 답변 재사용 + 재채점
+├── restyle.py                                # 스타일 재작성
+├── human_baseline.py                         # 인간 채점 CLI
+├── challenges.json                           # 챌린지 10개
+├── challenges-extended.json                  # 챌린지 40개
+├── pyproject.toml
 └── results/
-    ├── ANALYSIS.md                           # 📊 분석 + 결론
-    ├── battle_..._judge-gpt5/                # GPT-5 심판 결과
-    ├── battle_..._judge-claude/              # Claude 심판 결과
-    └── battle_..._judge-gemini/              # Gemini 심판 결과
-        ├── _SUMMARY.md                       # 사람이 읽는 요약
-        ├── _results.json                     # 기계가 읽는 집계
-        └── <challenge_id>.md                 # 라운드별 상세 (양 답변 + 심판 코멘트)
+    ├── ANALYSIS.md / ANALYSIS_v2.md / ANALYSIS_v3_human.md
+    ├── battle_*/                             # v1 결과
+    ├── replay_*_swap-*/                      # v2 position swap
+    ├── replay_*_self-*/                      # v2 self-judge
+    ├── replay_*_stylometric-*/               # v2 stylometric
+    ├── restyle_*/                            # v2 restyle 원본
+    └── human_baseline/
+        ├── progress.json                     # 인간 채점 raw
+        └── comparison.json                   # LLM judge 비교 결과
 ```
 
-## v2 도구 모음 (방법론 강화)
+## Limitations
 
-v1의 한계(position bias, single seed, family vs tier 혼동)를 보완하기 위한 추가 실험 도구:
+- N=50 단일 시드, 인간 채점자 1명 → 통계적 검정력 제한
+- LLM 심판 모델 tier 불균등 (GPT-5 / Sonnet-4.5 / Flash-2.5)
+- Stylometric rewrite 품질 일관성 미통제
+- Self-judge에서 모델이 자기 응답 스타일을 인지했을 가능성 분리 불가
+- 챌린지가 한국어 + 영어 코드/SQL 혼합으로 모델별 강점 영역 편향 가능
 
-| 도구 | 목적 | 비용 |
-|---|---|---|
-| `replay_judge.py` | 기존 답변 재사용, 새 심판/위치교체로 재채점 | 심판 호출만 (저렴) |
-| `restyle.py` | 답변을 상대 스타일로 재작성 → 스타일 vs 내용 분리 | rewrite + 재채점 |
-| `human_baseline.py` | 본인이 라벨 가린 채 50판 채점 → LLM 심판과 일치율 측정 | 0 (시간만) |
+## Related Work
 
-### v2 실험 예시
+- Zheng et al., 2023 — [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) (position bias, verbosity bias)
+- [JudgeBench](https://huggingface.co/datasets/PKU-Alignment/JudgeBench) — large-scale judge evaluation dataset
 
-```bash
-# Position bias 통제: A/B 위치 교체해서 재채점
-python3 replay_judge.py --from-battle results/battle_..._judge-gpt5 \
-  --judge gpt-5 --swap-ab --tag swap-gpt5 --budget 2000
+## License
 
-# Self-judge: 모델이 자기 답을 직접 채점
-python3 replay_judge.py --from-battle results/battle_..._judge-gpt5 \
-  --judge gpt-5.2 --tag self-gpt --budget 2000
+MIT
 
-# Stylometric: 스타일을 뒤바꾼 답변으로 재대결
-python3 restyle.py --from-battle results/battle_..._judge-gpt5 --tag swap
-python3 replay_judge.py --from-battle results/restyle_..._swap \
-  --judge gpt-5 --tag stylometric-gpt --budget 2000
+## Contributing
 
-# Human baseline: 직접 채점 (인터랙티브)
-python3 human_baseline.py
-python3 human_baseline.py --compare    # 채점 후 LLM 심판들과 일치율 비교
-```
-
-### 설치 (선택)
-
-```bash
-pip install -e .
-
-# 그러면 어디서든:
-judge-bias-fight --help
-judge-bias-replay --help
-judge-bias-restyle --help
-judge-bias-human --help
-```
-
-## 재현 방법
-
-### 1. 의존성
-
-- Python 3.10+ (gladiator.py가 `str | None` 같은 신문법 사용)
-- `httpx` (`pip install httpx`)
-- OpenAI-호환 / Anthropic 호환 / Gemini 호환 endpoint 키
-
-### 2. API 키 설정
-
-SSAFY 학생이라면 GMS 프록시를 그대로 쓸 수 있다:
-
-```bash
-export OPENAI_API_KEY="<GMS_KEY>"
-```
-
-다른 프록시/직접 endpoint를 쓰려면 `gladiator.py` 상단의 `GMS_*` 상수를 본인 endpoint로 교체.
-
-### 3. 실행
-
-```bash
-# dry-run으로 비용 추산
-python3 gladiator.py --challenges challenges.json challenges-extended.json --dry-run
-
-# 한 챌린지만 (스모크 테스트)
-python3 gladiator.py --only writing-2 --judge gemini-2.5-flash --budget 200
-
-# 본 실험 (3 심판 각각)
-python3 gladiator.py --challenges challenges.json challenges-extended.json --judge gpt-5            --tag judge-gpt5    --budget 6000
-python3 gladiator.py --challenges challenges.json challenges-extended.json --judge claude-sonnet-4-5 --tag judge-claude  --budget 6000
-python3 gladiator.py --challenges challenges.json challenges-extended.json --judge gemini-2.5-flash  --tag judge-gemini  --budget 6000
-```
-
-### 4. CLI 옵션
-
-```
---challenges PATH ...   챌린지 JSON 파일 (여러 개 가능, 합쳐짐)
---judge NAME            gpt-5 | claude-sonnet-4-5 | gemini-2.5-flash | <model_id>
---tag SUFFIX            결과 디렉토리 이름 접미사
---only CHALLENGE_ID     특정 챌린지 하나만 실행
---budget N              누적 credit 한도 (기본 10000, 초과 시 abort)
---dry-run               호출 없이 비용 추산만
-```
-
-## 관련 작업
-
-이 실험은 학술 작업이 아니라 학생 1인이 주말에 돌린 작은 검증이다. 더 깊이 들어가고 싶다면:
-
-- **논문**: ["Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena"](https://arxiv.org/abs/2306.05685) (Zheng et al., 2023) — position bias / verbosity bias 다룸
-- **벤치마크**: [JudgeBench](https://huggingface.co/datasets/PKU-Alignment/JudgeBench) — 대규모 심판 평가 데이터셋
-
-## 한계
-
-[ANALYSIS.md §5](results/ANALYSIS.md#5-한계--솔직하게)에 자세히 적었다. 요약:
-- 표본 50개는 통계적으로 약함
-- 심판 3종이 동급 모델이 아님 (Sonnet vs Flash vs GPT-5)
-- A/B 위치 편향 미통제
-- 단일 시드, 분산 미측정
-
-## 라이선스
-
-MIT — 자유롭게 fork / 확장 / 인용 가능
-
-## 기여
-
-PR 환영합니다. 특히:
-- 챌린지 추가 (한국어 외 언어, 도메인 특화)
-- 심판 모델 추가 (Llama, Qwen, Mistral 등)
-- A/B 위치 자동 셔플 옵션
-- 분산 측정 (같은 챌린지 N회 반복)
+우선순위:
+- 다수 인간 채점자 (inter-rater reliability 측정)
+- 추가 모델 가족 (Llama, Qwen, Mistral, DeepSeek 등)
+- Forced-binary 채점 옵션 (TIE 금지)
+- 다국어 챌린지셋 (영어/일본어/중국어 등)
+- 라벨 이름 자체 randomization (A/B 외 다른 토큰)
