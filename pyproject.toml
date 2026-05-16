@@ -23,9 +23,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/kngyeol/ssafy-llm-judge-bias"
-Repository = "https://github.com/kngyeol/ssafy-llm-judge-bias"
-Issues = "https://github.com/kngyeol/ssafy-llm-judge-bias/issues"
+Homepage = "https://github.com/kngyeol/llm-judge-bias"
+Repository = "https://github.com/kngyeol/llm-judge-bias"
+Issues = "https://github.com/kngyeol/llm-judge-bias/issues"
 
 [project.scripts]
 judge-bias-fight    = "gladiator:main"
