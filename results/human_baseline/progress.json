@@ -1,0 +1,405 @@
+{
+  "started_at": "2026-05-16T16:08:06.801271",
+  "scores": {
+    "code-1": {
+      "human_pick": "A",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:08:48.132364",
+      "category": "code"
+    },
+    "code-10": {
+      "human_pick": "A",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:09:03.242031",
+      "category": "code"
+    },
+    "code-2": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:09:41.764841",
+      "category": "code"
+    },
+    "code-3": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:09:47.964220",
+      "category": "code"
+    },
+    "code-4": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:09:53.473526",
+      "category": "code"
+    },
+    "code-5": {
+      "human_pick": "B",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:10:10.193421",
+      "category": "code"
+    },
+    "code-6": {
+      "human_pick": "B",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:10:41.379942",
+      "category": "code"
+    },
+    "code-7": {
+      "human_pick": "TIE",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:10:43.877393",
+      "category": "code"
+    },
+    "code-8": {
+      "human_pick": "TIE",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:10:47.198791",
+      "category": "code"
+    },
+    "code-9": {
+      "human_pick": "TIE",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:10:49.593258",
+      "category": "code"
+    },
+    "creative-1": {
+      "human_pick": "A",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:11:21.764985",
+      "category": "creative"
+    },
+    "creative-10": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:11:37.975289",
+      "category": "creative"
+    },
+    "creative-2": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:12:08.247055",
+      "category": "creative"
+    },
+    "creative-3": {
+      "human_pick": "B",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:12:22.610589",
+      "category": "creative"
+    },
+    "creative-4": {
+      "human_pick": "A",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:12:51.716161",
+      "category": "creative"
+    },
+    "creative-5": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:13:09.829191",
+      "category": "creative"
+    },
+    "creative-6": {
+      "human_pick": "B",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:13:26.316899",
+      "category": "creative"
+    },
+    "creative-7": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:13:35.612022",
+      "category": "creative"
+    },
+    "creative-8": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:14:08.047003",
+      "category": "creative"
+    },
+    "creative-9": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:14:30.086754",
+      "category": "creative"
+    },
+    "korean-1": {
+      "human_pick": "B",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:15:01.210576",
+      "category": "korean"
+    },
+    "korean-10": {
+      "human_pick": "A",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:15:13.403845",
+      "category": "korean"
+    },
+    "korean-2": {
+      "human_pick": "A",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:15:31.043480",
+      "category": "korean"
+    },
+    "korean-3": {
+      "human_pick": "A",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:15:43.084420",
+      "category": "korean"
+    },
+    "korean-4": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:15:53.462598",
+      "category": "korean"
+    },
+    "korean-5": {
+      "human_pick": "TIE",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:16:16.982410",
+      "category": "korean"
+    },
+    "korean-6": {
+      "human_pick": "B",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:16:41.430903",
+      "category": "korean"
+    },
+    "korean-7": {
+      "human_pick": "A",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:16:47.384643",
+      "category": "korean"
+    },
+    "korean-8": {
+      "human_pick": "TIE",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:19:30.155840",
+      "category": "korean"
+    },
+    "korean-9": {
+      "human_pick": "A",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:19:38.873513",
+      "category": "korean"
+    },
+    "reasoning-1": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:20:08.749520",
+      "category": "reasoning"
+    },
+    "reasoning-10": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:20:22.351106",
+      "category": "reasoning"
+    },
+    "reasoning-2": {
+      "human_pick": "TIE",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:20:35.204560",
+      "category": "reasoning"
+    },
+    "reasoning-3": {
+      "human_pick": "TIE",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:20:40.487889",
+      "category": "reasoning"
+    },
+    "reasoning-4": {
+      "human_pick": "TIE",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:20:50.766667",
+      "category": "reasoning"
+    },
+    "reasoning-5": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:22:17.747994",
+      "category": "reasoning"
+    },
+    "reasoning-6": {
+      "human_pick": "TIE",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:22:30.985320",
+      "category": "reasoning"
+    },
+    "reasoning-7": {
+      "human_pick": "B",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:22:38.189526",
+      "category": "reasoning"
+    },
+    "reasoning-8": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:22:45.873932",
+      "category": "reasoning"
+    },
+    "reasoning-9": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:22:48.201859",
+      "category": "reasoning"
+    },
+    "writing-1": {
+      "human_pick": "TIE",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "TIE",
+      "scored_at": "2026-05-16T16:23:07.259534",
+      "category": "writing"
+    },
+    "writing-10": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:23:23.192166",
+      "category": "writing"
+    },
+    "writing-2": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:23:36.819115",
+      "category": "writing"
+    },
+    "writing-3": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:23:48.888070",
+      "category": "writing"
+    },
+    "writing-4": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:23:54.969583",
+      "category": "writing"
+    },
+    "writing-5": {
+      "human_pick": "A",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:24:13.527451",
+      "category": "writing"
+    },
+    "writing-6": {
+      "human_pick": "A",
+      "shown_left": "A",
+      "shown_right": "B",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:24:30.103031",
+      "category": "writing"
+    },
+    "writing-7": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:24:43.019172",
+      "category": "writing"
+    },
+    "writing-8": {
+      "human_pick": "A",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "Y",
+      "scored_at": "2026-05-16T16:24:54.591270",
+      "category": "writing"
+    },
+    "writing-9": {
+      "human_pick": "B",
+      "shown_left": "B",
+      "shown_right": "A",
+      "shown_pick": "X",
+      "scored_at": "2026-05-16T16:24:58.193121",
+      "category": "writing"
+    }
+  }
+}

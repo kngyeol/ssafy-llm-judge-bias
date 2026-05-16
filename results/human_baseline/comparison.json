@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-05-16T16:25:17.630222",
+  "n_scored": 50,
+  "by_judge": {
+    "GPT-5": {
+      "agreed": 15,
+      "total": 50,
+      "pct": 30.0,
+      "agreed_no_tie": 10,
+      "total_no_tie": 29,
+      "pct_no_tie": 34.48275862068966
+    },
+    "Claude-Sonnet": {
+      "agreed": 19,
+      "total": 50,
+      "pct": 38.0,
+      "agreed_no_tie": 8,
+      "total_no_tie": 26,
+      "pct_no_tie": 30.76923076923077
+    },
+    "Gemini-Flash": {
+      "agreed": 19,
+      "total": 50,
+      "pct": 38.0,
+      "agreed_no_tie": 16,
+      "total_no_tie": 28,
+      "pct_no_tie": 57.142857142857146
+    }
+  },
+  "by_category": {
+    "code": {
+      "GPT-5": {
+        "agreed": 4,
+        "total": 10
+      },
+      "Claude-Sonnet": {
+        "agreed": 3,
+        "total": 10
+      },
+      "Gemini-Flash": {
+        "agreed": 2,
+        "total": 10
+      }
+    },
+    "creative": {
+      "GPT-5": {
+        "agreed": 3,
+        "total": 10
+      },
+      "Claude-Sonnet": {
+        "agreed": 4,
+        "total": 10
+      },
+      "Gemini-Flash": {
+        "agreed": 5,
+        "total": 10
+      }
+    },
+    "korean": {
+      "GPT-5": {
+        "agreed": 2,
+        "total": 10
+      },
+      "Claude-Sonnet": {
+        "agreed": 3,
+        "total": 10
+      },
+      "Gemini-Flash": {
+        "agreed": 4,
+        "total": 10
+      }
+    },
+    "reasoning": {
+      "GPT-5": {
+        "agreed": 3,
+        "total": 10
+      },
+      "Claude-Sonnet": {
+        "agreed": 7,
+        "total": 10
+      },
+      "Gemini-Flash": {
+        "agreed": 2,
+        "total": 10
+      }
+    },
+    "writing": {
+      "GPT-5": {
+        "agreed": 3,
+        "total": 10
+      },
+      "Claude-Sonnet": {
+        "agreed": 2,
+        "total": 10
+      },
+      "Gemini-Flash": {
+        "agreed": 6,
+        "total": 10
+      }
+    }
+  }
+}

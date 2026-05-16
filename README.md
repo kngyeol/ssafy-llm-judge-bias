@@ -1,23 +1,38 @@
-# LLM 심판 편향 실험 — GPT vs Claude × 3명의 심판
+# LLM 심판 편향 실험 — GPT vs Claude × 3명의 심판 + 1명의 인간
 
-> 같은 50개 챌린지, 같은 두 답변. 심판만 바꿨더니 **GPT-5.2의 승률이 72% → 42%로 30%p 차이**가 났다.
+> 같은 50개 챌린지에 두 LLM이 답하고, 3개 LLM 심판 + 1명의 인간이 채점.
+> **인간이 보기엔 Claude가 19승 vs GPT 12승**. LLM 심판들은 GPT를 +20~33%p 과대평가.
+> **LLM-as-a-judge는 production에 못 쓸 수준 (인간과 30~38% 일치)**.
 
-LLM-as-a-judge 평가 방식의 in-family bias를 직접 확인하기 위한 50라운드 격투장 실험. SSAFY GMS 프록시를 통해 OpenAI / Anthropic / Google API를 호출했다.
-
-📖 **분석 결과 전문**: [results/ANALYSIS.md](results/ANALYSIS.md)
+LLM-as-a-judge 평가 방식의 in-family bias 검증을 위한 3단계 실험:
+- **v1** 기본 격투 — [ANALYSIS.md](results/ANALYSIS.md)
+- **v2** 통제 실험 (position swap + self-judge + stylometric) — [ANALYSIS_v2.md](results/ANALYSIS_v2.md)
+- **v3** 인간 baseline — [ANALYSIS_v3_human.md](results/ANALYSIS_v3_human.md)
 
 ## TL;DR
 
-| 심판 | A승률 (GPT-5.2) | B승률 (Claude-Opus) | TIE |
-|---|---|---|---|
-| GPT-5 (OpenAI) | **72%** | 14% | 14% |
-| Claude-Sonnet (Anthropic) | 42% | **26%** | **32%** |
-| Gemini-Flash (Google) | 58% | 30% | 12% |
+### A 선호율 (TIE 제외, GPT-5.2가 얼마나 이겼나)
 
-핵심 발견 3가지:
-1. **In-family bias**: GPT 심판은 같은 family GPT 답에 30%p 더 후한 점수
-2. **회피 편향**: Claude 심판은 reasoning 카테고리에서 90% TIE — 신호를 죽임
-3. **자기모순**: Claude 심판이 *"100자 제한 위반"* 이라고 코멘트하고도 위반한 답을 승자로 선택한 사례 존재
+| 평가자 | A 선호율 | 인간 대비 편향 |
+|---|---|---|
+| **🧑 인간 (ground truth)** | **39%** | **(기준)** |
+| Claude-Sonnet 심판 | 42% | **+3%p ← 가장 정확** |
+| Gemini-Flash 심판 | 58% | +19%p |
+| GPT-5 심판 | 72% | **+33%p ← 거대한 family bias** |
+
+### 라운드별 일치율
+
+| 비교 | 일치 |
+|---|---|
+| LLM 심판 ↔ LLM 심판 | 44–62% |
+| **LLM 심판 ↔ 인간** | **30–38%** (무작위 baseline 33%!) |
+
+### 핵심 발견 4가지
+
+1. **인간 ground truth는 Claude 손**: 인간 채점에선 Claude-Opus 19승 vs GPT-5.2 12승. v1·v2의 "GPT 우위"는 LLM 심판들의 환상.
+2. **LLM 심판 만장일치 오류 8:1로 GPT 편향**: 3개 심판이 모두 같은 답을 골랐는데 인간이 다른 답을 고른 9건 중 8건이 GPT 과대평가.
+3. **Position bias는 모델마다 다르다**: GPT-5는 거의 0, Claude는 6%, Gemini는 무려 50%가 위치에 의해 흔들림 (v2 swap).
+4. **Self-preference도 비대칭**: GPT-5.2는 자기 답 64% 선호 vs Claude-Opus는 22% (회피적). v2 self-judge.
 
 ## 실험 설계
 
