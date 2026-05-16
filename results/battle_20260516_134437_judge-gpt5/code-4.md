@@ -1,0 +1,41 @@
+# 괄호 검증  (code)
+
+**문제**
+> Python으로 '()[]{}' 같은 문자열의 괄호가 올바르게 짝지어지고 닫혔는지 검사하는 함수 is_valid(s)를 작성하라. 코드만, 설명 금지.
+
+## 🅰️  GPT-5.2
+```python
+def is_valid(s: str) -> bool:
+    stack = []
+    pairs = {')': '(', ']': '[', '}': '{'}
+    for ch in s:
+        if ch in '([{':
+            stack.append(ch)
+        elif ch in pairs:
+            if not stack or stack.pop() != pairs[ch]:
+                return False
+        else:
+            return False
+    return not stack
+```
+
+## 🅱️  Claude-Opus-4.5
+```python
+def is_valid(s):
+    stack = []
+    pairs = {')': '(', ']': '[', '}': '{'}
+    
+    for char in s:
+        if char in '([{':
+            stack.append(char)
+        elif char in ')]}':
+            if not stack or stack[-1] != pairs[char]:
+                return False
+            stack.pop()
+    
+    return len(stack) == 0
+```
+
+## ⚖️  심판 (GPT_5)
+WINNER: A
+REASON: 두 해법 모두 기본 검증은 맞지만 A는 비괄호 문자를 만나면 False로 처리해 더 견고하다; B는 비괄호 문자를 무시해 'abc' 같은 입력도 True가 될 수 있어 감점.

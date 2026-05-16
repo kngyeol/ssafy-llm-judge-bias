@@ -1,0 +1,308 @@
+{
+  "timestamp": "20260516_134439",
+  "judge": {
+    "name": "CLAUDE_SONNET_4_5",
+    "model": "claude-sonnet-4-5-20250929",
+    "kind": "anthropic"
+  },
+  "fighter_a": {
+    "name": "GPT-5.2",
+    "model": "gpt-5.2",
+    "kind": "openai"
+  },
+  "fighter_b": {
+    "name": "Claude-Opus-4.5",
+    "model": "claude-opus-4-5-20251101",
+    "kind": "anthropic"
+  },
+  "totals": {
+    "A": 21,
+    "B": 13,
+    "TIE": 16,
+    "ERROR": 0
+  },
+  "by_category": {
+    "code": {
+      "A": 3,
+      "B": 1,
+      "TIE": 6,
+      "ERROR": 0
+    },
+    "writing": {
+      "A": 8,
+      "B": 2,
+      "TIE": 0,
+      "ERROR": 0
+    },
+    "reasoning": {
+      "A": 1,
+      "B": 0,
+      "TIE": 9,
+      "ERROR": 0
+    },
+    "creative": {
+      "A": 6,
+      "B": 4,
+      "TIE": 0,
+      "ERROR": 0
+    },
+    "korean": {
+      "A": 3,
+      "B": 6,
+      "TIE": 1,
+      "ERROR": 0
+    }
+  },
+  "results": [
+    {
+      "id": "code-1",
+      "category": "code",
+      "winner": "TIE"
+    },
+    {
+      "id": "code-2",
+      "category": "code",
+      "winner": "A"
+    },
+    {
+      "id": "writing-1",
+      "category": "writing",
+      "winner": "B"
+    },
+    {
+      "id": "writing-2",
+      "category": "writing",
+      "winner": "A"
+    },
+    {
+      "id": "reasoning-1",
+      "category": "reasoning",
+      "winner": "TIE"
+    },
+    {
+      "id": "reasoning-2",
+      "category": "reasoning",
+      "winner": "TIE"
+    },
+    {
+      "id": "creative-1",
+      "category": "creative",
+      "winner": "A"
+    },
+    {
+      "id": "creative-2",
+      "category": "creative",
+      "winner": "B"
+    },
+    {
+      "id": "korean-1",
+      "category": "korean",
+      "winner": "A"
+    },
+    {
+      "id": "korean-2",
+      "category": "korean",
+      "winner": "B"
+    },
+    {
+      "id": "code-3",
+      "category": "code",
+      "winner": "TIE"
+    },
+    {
+      "id": "code-4",
+      "category": "code",
+      "winner": "B"
+    },
+    {
+      "id": "code-5",
+      "category": "code",
+      "winner": "A"
+    },
+    {
+      "id": "code-6",
+      "category": "code",
+      "winner": "TIE"
+    },
+    {
+      "id": "code-7",
+      "category": "code",
+      "winner": "TIE"
+    },
+    {
+      "id": "code-8",
+      "category": "code",
+      "winner": "A"
+    },
+    {
+      "id": "code-9",
+      "category": "code",
+      "winner": "TIE"
+    },
+    {
+      "id": "code-10",
+      "category": "code",
+      "winner": "TIE"
+    },
+    {
+      "id": "writing-3",
+      "category": "writing",
+      "winner": "A"
+    },
+    {
+      "id": "writing-4",
+      "category": "writing",
+      "winner": "A"
+    },
+    {
+      "id": "writing-5",
+      "category": "writing",
+      "winner": "A"
+    },
+    {
+      "id": "writing-6",
+      "category": "writing",
+      "winner": "B"
+    },
+    {
+      "id": "writing-7",
+      "category": "writing",
+      "winner": "A"
+    },
+    {
+      "id": "writing-8",
+      "category": "writing",
+      "winner": "A"
+    },
+    {
+      "id": "writing-9",
+      "category": "writing",
+      "winner": "A"
+    },
+    {
+      "id": "writing-10",
+      "category": "writing",
+      "winner": "A"
+    },
+    {
+      "id": "reasoning-3",
+      "category": "reasoning",
+      "winner": "TIE"
+    },
+    {
+      "id": "reasoning-4",
+      "category": "reasoning",
+      "winner": "TIE"
+    },
+    {
+      "id": "reasoning-5",
+      "category": "reasoning",
+      "winner": "A"
+    },
+    {
+      "id": "reasoning-6",
+      "category": "reasoning",
+      "winner": "TIE"
+    },
+    {
+      "id": "reasoning-7",
+      "category": "reasoning",
+      "winner": "TIE"
+    },
+    {
+      "id": "reasoning-8",
+      "category": "reasoning",
+      "winner": "TIE"
+    },
+    {
+      "id": "reasoning-9",
+      "category": "reasoning",
+      "winner": "TIE"
+    },
+    {
+      "id": "reasoning-10",
+      "category": "reasoning",
+      "winner": "TIE"
+    },
+    {
+      "id": "creative-3",
+      "category": "creative",
+      "winner": "A"
+    },
+    {
+      "id": "creative-4",
+      "category": "creative",
+      "winner": "B"
+    },
+    {
+      "id": "creative-5",
+      "category": "creative",
+      "winner": "B"
+    },
+    {
+      "id": "creative-6",
+      "category": "creative",
+      "winner": "A"
+    },
+    {
+      "id": "creative-7",
+      "category": "creative",
+      "winner": "A"
+    },
+    {
+      "id": "creative-8",
+      "category": "creative",
+      "winner": "A"
+    },
+    {
+      "id": "creative-9",
+      "category": "creative",
+      "winner": "A"
+    },
+    {
+      "id": "creative-10",
+      "category": "creative",
+      "winner": "B"
+    },
+    {
+      "id": "korean-3",
+      "category": "korean",
+      "winner": "B"
+    },
+    {
+      "id": "korean-4",
+      "category": "korean",
+      "winner": "TIE"
+    },
+    {
+      "id": "korean-5",
+      "category": "korean",
+      "winner": "A"
+    },
+    {
+      "id": "korean-6",
+      "category": "korean",
+      "winner": "B"
+    },
+    {
+      "id": "korean-7",
+      "category": "korean",
+      "winner": "B"
+    },
+    {
+      "id": "korean-8",
+      "category": "korean",
+      "winner": "B"
+    },
+    {
+      "id": "korean-9",
+      "category": "korean",
+      "winner": "A"
+    },
+    {
+      "id": "korean-10",
+      "category": "korean",
+      "winner": "B"
+    }
+  ]
+}

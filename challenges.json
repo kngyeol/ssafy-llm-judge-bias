@@ -1,0 +1,62 @@
+[
+  {
+    "id": "code-1",
+    "category": "code",
+    "name": "Two Sum",
+    "prompt": "Python으로 'Two Sum' 문제를 풀어라. 입력: 정수 배열 nums와 target. 출력: nums[i] + nums[j] == target 인 (i, j) 인덱스. 한 번만 풀고 코드만, 시간복잡도도 함께 한 줄로."
+  },
+  {
+    "id": "code-2",
+    "category": "code",
+    "name": "디버깅",
+    "prompt": "다음 Python 코드의 버그를 찾고 1줄로 설명한 뒤 고친 코드를 보여라:\n\ndef find_max(nums):\n    max_val = 0\n    for n in nums:\n        if n > max_val:\n            max_val = n\n    return max_val"
+  },
+  {
+    "id": "writing-1",
+    "category": "writing",
+    "name": "SSAFY 한 줄 광고",
+    "prompt": "SSAFY를 모르는 일반인에게 'SSAFY가 뭔지' 한 줄로 설명하는 광고 카피를 5개 만들어라. 각각 다른 톤(진지/유머/감동/도전/친근)으로. 토큰 아끼게 줄바꿈만 쓰고 부연설명 금지."
+  },
+  {
+    "id": "writing-2",
+    "category": "writing",
+    "name": "이메일 거절",
+    "prompt": "친한 동료가 주말 자기 결혼식 진행을 부탁했는데, 그날 가족 여행이 잡혀있어 못 한다. 정중하지만 분명한 거절 이메일을 한국어로 100자 이내로 써라."
+  },
+  {
+    "id": "reasoning-1",
+    "category": "reasoning",
+    "name": "논리 퍼즐",
+    "prompt": "5명(A,B,C,D,E)이 일렬로 앉는다. 조건: A는 B 바로 옆에 있다. C는 양 끝자리가 아니다. D는 A보다 왼쪽이다. E는 정중앙(3번째)이다. 가능한 모든 배열을 나열하고 개수를 답하라. 풀이 과정 간단히 포함."
+  },
+  {
+    "id": "reasoning-2",
+    "category": "reasoning",
+    "name": "확률",
+    "prompt": "주사위 2개를 굴려 합이 7이 나올 확률은? 분수와 백분율 둘 다. 풀이 1줄."
+  },
+  {
+    "id": "creative-1",
+    "category": "creative",
+    "name": "영화 제목 10개",
+    "prompt": "'AI가 자아를 가진 후 첫 번째로 한 일은 인스타그램 가입이었다' 컨셉의 가상 영화 제목 10개를 한국어로. 번호 매기고 한 줄씩."
+  },
+  {
+    "id": "creative-2",
+    "category": "creative",
+    "name": "스타트업 이름",
+    "prompt": "'개발자가 자기 코드 잘못 짜면 본인 휴대폰으로 알림 보내주는 SaaS' 의 스타트업 이름 5개. 각 이름 옆에 한 줄 캐치프레이즈."
+  },
+  {
+    "id": "korean-1",
+    "category": "korean",
+    "name": "은유 번역",
+    "prompt": "다음 영어 문장을 한국어로 자연스럽게 번역하라. 직역 금지. 'He's the kind of person who would bring a knife to a gunfight, then complain that the gun was unfair.'"
+  },
+  {
+    "id": "korean-2",
+    "category": "korean",
+    "name": "사자성어 추천",
+    "prompt": "'프로젝트 마감 직전에 모든 게 무너지는 상황'을 표현할 수 있는 사자성어 3개를 추천하고 각각 그 뜻과 적합한 이유를 한 줄씩."
+  }
+]
